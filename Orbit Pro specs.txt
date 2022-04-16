@@ -1,0 +1,568 @@
+root@cpe:~# cat /proc/cmdline
+console=ttyS1,57600n8 root=/dev/mtdblock5 rootfstype=squashfs,jffs2
+
+
+root@cpe:~# opkg print-architecture
+arch all 1
+arch noarch 1
+arch ramips_24kec 10
+
+
+root@cpe:~# cat /proc/cpuinfo
+system type             : MT7621
+machine                 : Unknown
+processor               : 0
+cpu model               : MIPS 1004Kc V2.15
+BogoMIPS                : 583.68
+wait instruction        : yes
+microsecond timers      : yes
+tlb_entries             : 32
+extra interrupt vector  : yes
+hardware watchpoint     : yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa                     : mips1 mips2 mips32r1 mips32r2
+ASEs implemented        : mips16 dsp mt
+shadow register sets    : 1
+kscratch registers      : 0
+core                    : 0
+VPE                     : 0
+VCED exceptions         : not available
+VCEI exceptions         : not available
+
+processor               : 1
+cpu model               : MIPS 1004Kc V2.15
+BogoMIPS                : 583.68
+wait instruction        : yes
+microsecond timers      : yes
+tlb_entries             : 32
+extra interrupt vector  : yes
+hardware watchpoint     : yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa                     : mips1 mips2 mips32r1 mips32r2
+ASEs implemented        : mips16 dsp mt
+shadow register sets    : 1
+kscratch registers      : 0
+core                    : 0
+VPE                     : 1
+VCED exceptions         : not available
+VCEI exceptions         : not available
+
+processor               : 2
+cpu model               : MIPS 1004Kc V2.15
+BogoMIPS                : 583.68
+wait instruction        : yes
+microsecond timers      : yes
+tlb_entries             : 32
+extra interrupt vector  : yes
+hardware watchpoint     : yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa                     : mips1 mips2 mips32r1 mips32r2
+ASEs implemented        : mips16 dsp mt
+shadow register sets    : 1
+kscratch registers      : 0
+core                    : 1
+VPE                     : 0
+VCED exceptions         : not available
+VCEI exceptions         : not available
+
+processor               : 3
+cpu model               : MIPS 1004Kc V2.15
+BogoMIPS                : 583.68
+wait instruction        : yes
+microsecond timers      : yes
+tlb_entries             : 32
+extra interrupt vector  : yes
+hardware watchpoint     : yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa                     : mips1 mips2 mips32r1 mips32r2
+ASEs implemented        : mips16 dsp mt
+shadow register sets    : 1
+kscratch registers      : 0
+core                    : 1
+VPE                     : 1
+VCED exceptions         : not available
+VCEI exceptions         : not available
+
+
+root@cpe:~# cat /proc/meminfo
+MemTotal:         125072 kB
+MemFree:           18300 kB
+Buffers:            7420 kB
+Cached:            29048 kB
+SwapCached:            0 kB
+Active:            22188 kB
+Inactive:          23076 kB
+Active(anon):       9752 kB
+Inactive(anon):      196 kB
+Active(file):      12436 kB
+Inactive(file):    22880 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          8828 kB
+Mapped:             4836 kB
+Shmem:              1152 kB
+Slab:              39420 kB
+SReclaimable:      21808 kB
+SUnreclaim:        17612 kB
+KernelStack:         968 kB
+PageTables:          788 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       62536 kB
+Committed_AS:      51556 kB
+VmallocTotal:    1048372 kB
+VmallocUsed:       18900 kB
+VmallocChunk:     932576 kB
+
+root@cpe:~# cat /proc/devices
+Character devices:
+  1 mem
+  2 pty
+  3 ttyp
+  4 ttyS
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+ 10 misc
+ 21 sg
+ 90 mtd
+108 ppp
+128 ptm
+136 pts
+166 ttyACM
+180 usb
+189 usb_device
+234 xhci_mtk_test
+249 ubi0
+250 sfe_ipv6
+251 apsoc_nvram
+252 gpio
+253 rdm0
+254 sfe_ipv4
+
+Block devices:
+259 blkext
+  8 sd
+ 31 mtdblock
+ 65 sd
+ 66 sd
+ 67 sd
+ 68 sd
+ 69 sd
+ 70 sd
+ 71 sd
+128 sd
+129 sd
+130 sd
+131 sd
+132 sd
+133 sd
+134 sd
+135 sd
+179 mmc
+
+
+root@cpe:~# cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 07f80000 00020000 "ALL"
+mtd1: 00080000 00020000 "Bootloader"
+mtd2: 00080000 00020000 "Config"
+mtd3: 00040000 00020000 "Factory"
+mtd4: 026c0000 00020000 "firmware1"
+mtd5: 025291da 00020000 "rootfs"
+mtd6: 01d00000 00020000 "rootfs_data"
+mtd7: 026c0000 00020000 "firmware2"
+mtd8: 03040000 00020000 "ota"
+mtd9: 00080000 00020000 "Configbak"
+
+
+root@cpe:~# df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+rootfs                   29696      1788     27908   6% /
+/dev/root                 8448      8448         0 100% /rom
+tmpfs                    62536       772     61764   1% /tmp
+/dev/mtdblock6           29696      1788     27908   6% /overlay
+overlayfs:/overlay       29696      1788     27908   6% /
+tmpfs                      512         0       512   0% /dev
+ubi0:ota                 37960        32     35952   0% /internal_sd
+/dev/ubi0_0              37960        32     35952   0% /mnt/ubi0_0
+
+
+root@cpe:~# ifconfig -a
+apcli0    Link encap:Ethernet  HWaddr E6:7D:EB:02:48:EA
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+autolan   Link encap:Ethernet  HWaddr 00:0C:43:28:80:2A
+          inet6 addr: fe80::20c:43ff:fe28:802a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1233 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:78414 (76.5 KiB)  TX bytes:582 (582.0 B)
+
+autowan   Link encap:Ethernet  HWaddr 00:0C:43:28:80:2B
+          inet addr:192.168.7.20  Bcast:192.168.7.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:43ff:fe28:802b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:36428467 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:18400078 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:45242278621 (42.1 GiB)  TX bytes:2579390360 (2.4 GiB)
+
+br-lan    Link encap:Ethernet  HWaddr 00:0C:43:28:80:2A
+          inet addr:192.168.8.1  Bcast:192.168.8.255  Mask:255.255.255.0
+          inet6 addr: fd59:5688:734e::1/60 Scope:Global
+          inet6 addr: fe80::20c:43ff:fe28:802a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2702748 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:96850948 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:258459087 (246.4 MiB)  TX bytes:107518510914 (100.1 GiB)
+
+eth0      Link encap:Ethernet  HWaddr 00:0C:43:28:80:06
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:233837 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:39738729 (37.8 MiB)
+          Interrupt:3
+
+eth1      Link encap:Ethernet  HWaddr AC:50:43:88:CA:EF
+          inet addr:10.38.54.33  Bcast:10.127.255.255  Mask:255.128.0.0
+          inet6 addr: fe80::ae50:43ff:fe88:caef/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:60529873 errors:13911 dropped:2 overruns:0 frame:13911
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:1254257672 (1.1 GiB)  TX bytes:3139787922 (2.9 GiB)
+
+eth2      Link encap:Ethernet  HWaddr 00:0C:43:28:80:2C
+          inet6 addr: fe80::20c:43ff:fe28:802c/64 Scope:Link
+          UP BROADCAST RUNNING PROMISC MULTICAST  MTU:1500  Metric:1
+          RX packets:36428467 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:18400094 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:2292605661 (2.1 GiB)  TX bytes:2579391908 (2.4 GiB)
+
+gre0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-B0-E2-00-00-00-00-00-00-00-00
+          NOARP  MTU:1476  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+gretap0   Link encap:Ethernet  HWaddr 00:00:00:00:00:00
+          BROADCAST MULTICAST  MTU:1476  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:1276 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1276 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:160764 (156.9 KiB)  TX bytes:160764 (156.9 KiB)
+
+ra0       Link encap:Ethernet  HWaddr E4:7D:EB:62:48:EA
+          inet6 addr: fe80::e67d:ebff:fe62:48ea/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:43301591 errors:1767 dropped:0 overruns:0 frame:0
+          TX packets:61341719 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:2067085468 (1.9 GiB)  TX bytes:4077496939 (3.7 GiB)
+          Interrupt:4
+
+ra1       Link encap:Ethernet  HWaddr E6:7D:EB:72:48:EA
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+rai0      Link encap:Ethernet  HWaddr E4:7D:EB:E0:D5:20
+          inet6 addr: fe80::e67d:ebff:fee0:d520/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:24395337 errors:1224995 dropped:0 overruns:0 frame:0
+          TX packets:35608209 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:2794075420 (2.6 GiB)  TX bytes:3655099814 (3.4 GiB)
+          Interrupt:24
+
+rai1      Link encap:Ethernet  HWaddr 00:00:00:00:00:00
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+sit0      Link encap:IPv6-in-IPv4
+          NOARP  MTU:1480  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+teql0     Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          NOARP  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+
+root@cpe:~# ls /sys/class/net
+apcli0   autolan  autowan  br-lan   eth0     eth1     eth2     gre0     gretap0  lo       ra0      ra1      rai0     rai1     sit0     teql0
+
+
+root@cpe:~# brctl show
+bridge name     bridge id               STP enabled     interfaces
+br-lan          7fff.000c4328802a       no              eth0
+                                                        ra0
+                                                        rai0
+
+
+root@cpe:~# opkg list-installed
+8021xd - 1
+DiagSaver - 1.0-0
+DiagTransfer - 2019-1.0
+RdpTransfer - 2019-1.0
+applets - 0.1-1
+atcmd - 1.0-0
+ated_ext - 1
+base-files - 157.2-unknown
+block-mount - 2015-02-25.1-914b023e71559e033ec5a1f9840511eb1ccaf386
+bndstrg_plus - 1
+busybox - 1.23.2-1
+cgi - 0.1-1
+con_mgr - 2014-1
+ddns-scripts - 1.0.0-23
+diag - 2014-1
+dnsmasq - 2.80-1
+dropbear - 2015.67-1
+ebtables - 2.0.10-4-3
+ebtables-utils - 2.0.10-4-3
+ethstt - 1
+firewall - 2014-09-19
+flash - 1
+fstools - 2015-02-25.1-914b023e71559e033ec5a1f9840511eb1ccaf386
+gpio - 1
+gre - 1-3
+hwnat - 4200
+ip - 4.0.0-1
+ip6tables - 1.4.21-1
+ip6tables-extra - 1.4.21-1
+ip6tables-mod-nat - 1.4.21-1
+iperf3 - 3.0.11-1
+iptables - 1.4.21-1
+iptables-mod-conntrack-extra - 1.4.21-1
+iptables-mod-filter - 1.4.21-1
+iptables-mod-ipopt - 1.4.21-1
+jshn - 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+jsonfilter - 2014-06-19-cdc760c58077f44fc40adbbe41e1556a67c1b9a9
+kernel - 3.10.108-1-12d3f2e96bd5d0e860918806accc694d
+kmod-antenna-gpio - 3.10.108-1
+kmod-atm - 3.10.108-1
+kmod-bridge - 3.10.108-1
+kmod-crypto-aead - 3.10.108-1
+kmod-crypto-arc4 - 3.10.108-1
+kmod-crypto-core - 3.10.108-1
+kmod-crypto-ecb - 3.10.108-1
+kmod-crypto-hash - 3.10.108-1
+kmod-crypto-manager - 3.10.108-1
+kmod-crypto-null - 3.10.108-1
+kmod-crypto-pcompress - 3.10.108-1
+kmod-crypto-sha1 - 3.10.108-1
+kmod-ebtables - 3.10.108-1
+kmod-fast-classifier - 3.10.108-1
+kmod-fs-ext4 - 3.10.108-1
+kmod-fs-msdos - 3.10.108-1
+kmod-fs-vfat - 3.10.108-1
+kmod-fuse - 3.10.108-1
+kmod-gre - 3.10.108-1
+kmod-hw_nat - 3.10.108-1
+kmod-hw_wdg - 3.10.108-1
+kmod-input-core - 3.10.108-1
+kmod-ip6tables - 3.10.108-1
+kmod-ip6tables-extra - 3.10.108-1
+kmod-ipt-conntrack - 3.10.108-1
+kmod-ipt-conntrack-extra - 3.10.108-1
+kmod-ipt-core - 3.10.108-1
+kmod-ipt-filter - 3.10.108-1
+kmod-ipt-ipopt - 3.10.108-1
+kmod-ipt-nat - 3.10.108-1
+kmod-ipt-nat-extra - 3.10.108-1
+kmod-ipt-nat6 - 3.10.108-1
+kmod-ipt-nathelper - 3.10.108-1
+kmod-ipt-nathelper-extra - 3.10.108-1
+kmod-ipt_trigger - 3.10.108-1
+kmod-iptunnel - 3.10.108-1
+kmod-ipv6 - 3.10.108-1
+kmod-key-gpio - 3.10.108-1
+kmod-l2tp - 3.10.108-1
+kmod-led-gpio - 3.10.108-3
+kmod-leds-gpio - 3.10.108-1
+kmod-ledtrig-netdev - 3.10.108-1
+kmod-lib-crc-ccitt - 3.10.108-1
+kmod-lib-crc16 - 3.10.108-1
+kmod-lib-textsearch - 3.10.108-1
+kmod-llc - 3.10.108-1
+kmod-macvlan - 3.10.108-1
+kmod-mii - 3.10.108-1
+kmod-mppe - 3.10.108-1
+kmod-mt7603-ko - 3.10.108+MT7603e_LinuxAP_V4.1.0.0_20180725-1
+kmod-mt7663-ko - 3.10.108+MT7663_LinuxAP_V6.0.1.0_20190222.tar.bz2-1
+kmod-mtk-gdma - 3.10.108-1
+kmod-nls-base - 3.10.108-1
+kmod-nls-cp437 - 3.10.108-1
+kmod-nls-cp850 - 3.10.108-1
+kmod-nls-iso8859-1 - 3.10.108-1
+kmod-nls-iso8859-15 - 3.10.108-1
+kmod-nls-utf8 - 3.10.108-1
+kmod-ppp - 3.10.108-1
+kmod-pppoa - 3.10.108-1
+kmod-pppoe - 3.10.108-1
+kmod-pppol2tp - 3.10.108-1
+kmod-pppox - 3.10.108-1
+kmod-pptp - 3.10.108-1
+kmod-rdm - 3.10.108-1
+kmod-sched - 3.10.108-1
+kmod-sched-connmark - 3.10.108-1
+kmod-sched-core - 3.10.108-1
+kmod-scsi-core - 3.10.108-1
+kmod-scsi-generic - 3.10.108-1
+kmod-serial-8250 - 3.10.108-1
+kmod-shortcut-fe - 3.10.108-1
+kmod-shortcut-fe-cm - 3.10.108-1
+kmod-slhc - 3.10.108-1
+kmod-stp - 3.10.108-1
+kmod-udptunnel4 - 3.10.108-1
+kmod-udptunnel6 - 3.10.108-1
+kmod-usb-acm - 3.10.108-1
+kmod-usb-core - 3.10.108-1
+kmod-usb-net - 3.10.108-1
+kmod-usb-net-cdc-ether - 3.10.108-1
+kmod-usb-net-rndis - 3.10.108-1
+kmod-usb-printer - 3.10.108-1
+kmod-usb-storage - 3.10.108-1
+kmod-usb-storage-extras - 3.10.108-1
+kmod-usb2 - 3.10.108-1
+kmod-usb3 - 3.10.108-1
+led_trigger - 1.0-0
+libblobmsg-json - 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+libblobmsg-xml - 0.1-1
+libc - 0.9.33.2-1
+libcgi - 1.0
+libgcc - 4.8-linaro-1
+libip4tc - 1.4.21-1
+libip6tc - 1.4.21-1
+libipt_trigger - 2014-1
+libiwinfo - 2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371
+libiwinfo-lua - 2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371
+libjson-c - 0.12-1
+libjson-script - 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+liblog - 1.0-1
+liblua - 5.1.5-1
+libml_utils - 1.0-1
+libmxml - 2.8-1
+libnfnetlink - 1.0.1-1
+libnl-tiny - 0.1-5
+libnvram - 1
+libopenssl - 1.0.2h-1
+libpcap - 1.5.3-1
+libpcre - 8.41-2
+libpolarssl - 1.3.14-1
+libprop2uci - 1.0-1
+libpthread - 0.9.33.2-1
+librt - 0.9.33.2-1
+libstdcpp - 4.8-linaro-1
+libubox - 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+libubus - 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+libubus-lua - 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+libuci - 2015-08-27.1-1
+libuci-lua - 2015-08-27.1-1
+libusb-1.0 - 1.0.19-1
+libuuid - 2.25.2-4
+libxml2 - 2.9.2-2
+libxtables - 1.4.21-1
+lighttpd - 1.4.35-2
+lighttpd-mod-auth - 1.4.35-2
+lighttpd-mod-cgi - 1.4.35-2
+lighttpd-mod-compress - 1.4.35-2
+lighttpd-mod-setenv - 1.4.35-2
+lighttpd-mod-webdav - 1.4.35-2
+linux-atm - 2.5.2-5
+logcat - 1.0-1
+logd - 2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031
+lte-telephony - 2014-1
+lua - 5.1.5-1
+memtester - 4.3.0-1
+mii_mgr - 1
+miniupnpd - 1.8.20140523-4
+mpstat - 1
+mt7603-scripts - MT7603e_LinuxAP_V4.1.0.0_20180725
+mt7663-scripts - MT7663_LinuxAP_V6.0.1.0_20190222.tar.bz2
+mtd - 21
+mtk-base-files - 1-unknown
+mwan3 - 1.5-10
+netifd - 2015-12-16-245527193e90906451be35c2b8e972b8712ea6ab
+nodogsplash - 1.0.1-2
+nxlog - 0.1-1
+odhcp6c - 2014-12-10-722226c4f1d45c8bf4ac9189523738abcf7d648f
+odhcpd - 2014-09-25-a6e2953843eaf6c93764f9feef10466e7a84ec85
+omcproxy - 3
+openssl-util - 1.0.2h-1
+opkg - 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-9
+ota - 0.1-1
+phonebook - 1.0-1
+ppp - 2.4.7-6
+ppp-mod-pppoa - 2.4.7-6
+ppp-mod-pppoe - 2.4.7-6
+ppp-mod-pppol2tp - 2.4.7-6
+ppp-mod-pptp - 2.4.7-6
+procd - 2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18
+prop2uci - 1.0-1
+qdma - 1
+qos - 2014-1
+regs - 1
+resolveip - 2
+ril - 1.0-1
+router_firewall - 2014-1
+router_settings - 2014-1
+rpcd - 2016-06-30-23417e94d25570e6d62542bac46edd51e8e0243a
+rpcd-mod-diagnostic - 2016-06-30-23417e94d25570e6d62542bac46edd51e8e0243a
+sim_mgr - 0.1-1
+sms - 1.0-1
+switch - 1
+tc - 4.0.0-1
+tcpdump - 4.5.1-4
+tr069 - 1.0-1
+traffic_stat - 2014-1
+uboot-envtools - 2014.10-2
+ubox - 2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031
+ubus - 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+ubusd - 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+uci - 2015-08-27.1-1
+uci2dat - 1
+uclibcxx - 0.2.4-1
+usign - 2015-05-08-cf8dcdb8a4e874c77f3e9a8e9b643e8c17b19131
+ver_cfg - 0.1-1
+wanrouter - 1.0-0
+watchdog - 1
+wifi-l1profile - 1-unknown
+wificonf - 1
+wifimonitor - 1.0-1
+wireless - 2.0-1
+wireless-tools - 29-5
+wtdops - 1.0-1
+xl2tpd - devel-20151125-3
+zlib - 1.2.8-1
+
